@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-bangers {
+    font-family: 'Bangers', cursive, sans-serif;
+    letter-spacing: 0.05em;
+  }
+  .font-comic {
+    font-family: 'Comic Neue', cursive, sans-serif;
+  }
+  .font-sans-clean {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  .comic-border {
+    border: 3px solid #18181b;
+  }
+  
+  .comic-border-thick {
+    border: 4px solid #18181b;
+  }
+
+  .comic-shadow {
+    box-shadow: 4px 4px 0px #18181b;
+  }
+
+  .comic-shadow-lg {
+    box-shadow: 6px 6px 0px #18181b;
+  }
+
+  .comic-shadow-xl {
+    box-shadow: 8px 8px 0px #18181b;
+  }
+
+  .comic-shadow-sm {
+    box-shadow: 2px 2px 0px #18181b;
+  }
+
+  .halftone-dots {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.08) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+  }
+
+  .halftone-dots-yellow {
+    background-image: radial-gradient(rgba(234, 179, 8, 0.25) 2px, transparent 2px);
+    background-size: 14px 14px;
+  }
+}
+
+/* Custom Speech Bubble tail classes */
+.speech-bubble {
+  position: relative;
+  border-radius: 1rem;
+}
+.speech-bubble-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 28px;
+  border-width: 12px 10px 0;
+  border-style: solid;
+  border-color: #ffffff transparent;
+  display: block;
+  width: 0;
+}
+.speech-bubble-bottom::before {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 26px;
+  border-width: 15px 12px 0;
+  border-style: solid;
+  border-color: #18181b transparent;
+  display: block;
+  width: 0;
+}
+
+.thought-bubble {
+  position: relative;
+  border-radius: 1.5rem;
+}
+
+/* Print optimizations for PDF/print */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+  }
+}
